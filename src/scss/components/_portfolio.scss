@@ -1,0 +1,156 @@
+/*Portfolio------------------Portfolio*/
+
+.portfolio {
+  width: 100%;
+  background-color: var(--Color-Primary);
+}
+.portfolio__container {
+  width: 100%;
+}
+.portfolio__project {
+  width: 100%;
+  height: 650px;
+  padding-top: var(--Space-Project);
+  @include media(tablet-small) {
+    height: 750px;
+  }
+  @include media(tablet) {
+    height: 850px;
+  }
+  @include media(laptop) {
+    display: grid;
+    grid-template-rows: 50px 400px 100px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "title title"
+                         "port descript"
+                         ". tecnologies";
+  }
+}
+.portfolio__title {
+  font-size: var(--Font-Size-Three);
+  margin-bottom: var(--Margin-Titles);
+  text-align: center;
+  @include media(laptop) {
+    grid-area: title;
+  }
+  a {
+    position: relative;
+    right: 3px;
+    color: var(--White);
+  }
+}
+.portfolio__title-half {
+  @include media(laptop) {
+    position: relative;
+    color: var(--Color-Primary);
+  }
+}
+.portfolio__image-container {
+  @include media(laptop) {
+    margin-top: -100px;
+    margin-left: -100px;
+    margin-bottom: -300px;
+    padding-top: 100px;
+    padding-bottom: 300px;
+    background-color: var(--White);
+
+  }
+}
+.portfolio__image {
+  @include media(laptop) {
+    position: relative;
+    grid-area: port;
+  }
+}
+.portfolio__image img {
+  width: 250px;
+  height: 200px;
+  @include media(tablet-small) {
+    width: 60%;
+    height: 40%;
+  }
+  @include media(tablet) {
+    width: 80%;
+    height: 50%;
+  }
+  @include media(laptop) {
+    width: 100%;
+    height: 100%;
+  }
+}
+.porfolio__description {
+  margin: 20px 0 0 50px;
+  @include media(laptop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: descript;
+  }
+}
+.porfolio__description p {
+  margin-bottom: 20px;
+  color: var(--White);
+  line-height: var(--Line-Height);
+  font-size: var(--Font-Size-Mini);
+  @include media(tablet-small) {
+    font-size: var(--Font-Size-One);
+  }
+  @include media(laptop) {
+    line-height: var(--Line-Height-Desk);
+  }
+  a {
+    text-decoration: underline;
+    color: var(--White);
+  }
+  span {
+    font-weight: var(--Font-Weight-Regular);
+  }
+}
+.portfolio__tecnologies {
+  width: 100%;
+  margin-top: 80px;
+  font-size: var(--Font-Size-Mini);
+  text-align: center;
+  @include media(tablet-small) {
+    font-size: var(--Font-Size-One);
+  }
+  @include media(tablet) {
+    margin-top: 100px;
+    font-size: var(--Font-Size-Two);
+    font-weight: var(--Font-Weight-Regular);
+  }
+  @include media(laptop) {
+    margin: 0;
+    grid-area: tecnologies;
+  }
+  li {
+    display: inline-block;
+    color: var(--White);
+    border-left: 1px solid var(--White);
+  }
+  li:nth-of-type(1) {
+    width: 60px;
+    border: none;
+    @include media(tablet) {
+      width: 70px;
+    }
+  }
+  li:nth-of-type(2) {
+    width: 50px;
+    @include media(tablet) {
+      width: 60px;
+    }
+  }
+  li:nth-of-type(3) {
+    width: 50px;
+    @include media(tablet) {
+      width: 60px;
+    }
+  }
+  li:nth-of-type(4) {
+    width: 30px;
+    @include media(tablet) {
+      width: 40px;
+    }
+  }
+}

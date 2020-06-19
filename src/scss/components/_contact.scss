@@ -1,0 +1,84 @@
+.contact {
+  width: 100%;
+  margin-top: var(--Space-Section);
+  height: 300px;
+}
+.contact__container {
+  width: 100%;
+}
+.contact__title {
+  @extend %title-last-section;
+}
+.contact__description {
+  @extend %description-last-section;
+}
+.contact__network  ul {
+  display: flex;
+  justify-content: center;
+}
+.contact__network  {
+  width: 100%;
+  margin-top: 15%;
+  position: relative;
+  font-size: var(--Font-Size-One);
+  font-weight: var(--Font-Weight-Regular);
+  text-align: center;
+  text-decoration: underline;
+  z-index: 100;
+  @include media(cellphone) {
+    font-size: var(--Font-Size-Two);
+  }
+  @include media(tablet) {
+    margin-top: 90px;
+  }
+  @include media(laptop) {
+    margin-top: 10%;
+  }
+  li {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--Color-Primary);
+    @include media(cellphone) {
+      height: 40px;
+    }
+  }
+  li:nth-of-type(1) {
+    border: none;
+    width: 70px;
+    @include media(cellphone) {
+      width: 100px;
+    }
+  }
+  li:nth-of-type(2) {
+    width: 60px;
+    @include media(cellphone) {
+      width: 90px;
+    }
+  }
+  li:nth-of-type(3) {
+    width: 70px;
+    color: var(--White);
+    border-left: 1px solid var(--Color-Primary);
+    @include media(cellphone) {
+      width: 100px;
+    }
+    a {
+      color: var(--White);
+    }
+  }
+  li:nth-of-type(4) {
+    width: 90px;
+    @include media(cellphone) {
+      width: 130px;
+    }
+    border-left: 1px solid var(--White);
+    a {
+      color: var(--White);
+    }
+  }
+  a {
+    color: var(--Color-Primary);
+  }
+}

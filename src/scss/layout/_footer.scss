@@ -1,0 +1,37 @@
+.footer {
+  width: 100%;
+  margin-top: 50px;
+  padding-top: 1px;
+  background-color: var(--Color-Primary);
+}
+.footer__container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--White);
+}
+.footer__decoration {
+  display: block;
+  width: 52%;
+  height: 150px;
+  position: absolute;
+  top: 2700px;
+  right: 0;
+  background-color: var(--Color-Primary);
+  z-index: 0;
+  @include media(cellphone) {
+    width: 51%;
+  }
+  @include media(tablet-small) {
+    top: 2900px;
+  }
+  @include media(tablet) {
+    width: 51%;
+    top: 3100px;
+  }
+  @include media(laptop) {
+    top: 3000px;
+  }
+}

@@ -1,0 +1,295 @@
+/*Header*/
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: var(--Color-Primary);
+  color: var(--White);
+}
+.header__container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  @include media(laptop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "header .";
+    position: static;
+  }
+}
+/*Burguer Menu*/
+.header__bm {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Color-Primary);
+  position: relative;
+  cursor: pointer;
+  @include media(laptop) {
+    display: none;
+  }
+  &:hover .header__bm-p1 {
+    top: 6px;
+  }
+  &:hover .header__bm-p3 {
+    top: 30px;
+  }
+}
+.header__bm-p1 {
+  width: 30px;
+  position: absolute;
+  top: 8px;
+  background-color: var(--White);
+  border: 1.5px solid var(--White);
+  border-radius: 1px;
+  will-change: transform;
+}
+.header__bm-p2 {
+  width: 30px;
+  position: absolute;
+  top: 18px;
+  background-color: var(--White);
+  border: 1.5px solid var(--White);
+  border-radius: 1px;
+  will-change: opacity;
+}
+.header__bm-p3 {
+  width: 30px;
+  position: absolute;
+  top: 28px;
+  background-color: var(--White);
+  border: 1.5px solid var(--White);
+  border-radius: 1px;
+  will-change: transform;
+}
+.p1 {
+  animation: p1 .5s forwards;
+  transform-origin: 0 100%;
+}
+.p2 {
+  animation: p2 .5s forwards;
+}
+.p3 {
+  animation: p3 .5s forwards;
+  transform-origin: 0 100%;
+}
+.p1-out {
+  animation: p1Out .5s forwards;
+  transform-origin: 0% 100%;
+}
+.p2-out {
+  animation: p2Out .5s forwards;
+}
+.p3-out {
+  animation: p3Out .5s forwards;
+  transform-origin: 0% 100%;
+}
+
+/*Header Nav*/
+.header__nav {
+  width: 273px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  @include media(laptop) {
+    width: 100%;
+    height: 100px;
+    padding-left: 11%;
+    margin-left: -11%;
+    background-color: var(--White);
+    grid-area: header;
+  }
+}
+.header__nav-ul {
+  width: 100%;
+  display: flex; //flex
+  font-size: var(--Font-Size-One);
+  justify-content: space-around;
+  a {
+    color: var(--White);
+    text-decoration: none;
+    @include media(laptop) {
+      color: var(--Color-Primary);
+    }
+  }
+}
+.header__nav-home {
+  padding: 5px;
+  display: none;
+  animation: inHome .25s forwards ease-in;
+  opacity: 0;
+  will-change: transform, opacity;
+  @include media(laptop) {
+    display: flex;
+    background-color: var(--White);
+    animation: none;
+    opacity: 1;
+  }
+  &.out {
+    animation: outHome 1.2s forwards ease-in-out;
+    @include media(laptop) {
+      background-color: var(--White);
+      animation: none;
+    }
+  }
+}
+.header__nav-portfolio {
+  padding: 6px;
+  display: none;
+  animation: inPort .5s forwards ease-in;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1s;
+  will-change: transform, opacity;
+  @include media(laptop) {
+    display: flex;
+    background-color: var(--White);
+    animation: none;
+    opacity: 1;
+  }
+  &.out {
+    animation: outPort 1s forwards;
+    @include media(laptop) {
+      background-color: var(--White);
+      animation: none;
+    }
+  }
+}
+.header__nav-about {
+  padding: 5px;
+  display: none;
+  animation: inAbout .75s forwards ease-in;
+  opacity: 0;
+  will-change: transform, opacity;
+  @include media(laptop) {
+    display: flex;
+    background-color: var(--White);
+    animation: none;
+    opacity: 1;
+  }
+  &.out {
+  animation: outAbout .8s forwards;
+    @include media(laptop) {
+      background-color: var(--White);
+      animation: none;
+    }
+  }
+}
+
+.header__nav-contact {
+  padding: 5px;
+  display: none;
+  animation: inContact 1s forwards ease-in;
+  opacity: 0;
+  will-change: transform, opacity;
+  @include media(laptop) {
+    display: flex;
+    background-color: var(--White);
+    animation: none;
+    opacity: 1;
+    // color: var(--Color-Primary);
+  }
+  &.out {
+    animation: outContact .6s forwards;
+    @include media(laptop) {
+      background-color: var(--White);
+      animation: none;
+    }
+  }
+}
+.underline::after {
+  display: block;
+  // width: 50px;
+  height: 1px;
+  margin: 2px auto 0;
+  content: "";
+  background-color: var(--White);
+  @include media(laptop) {
+    background-color: var(--Color-Primary);
+
+  }
+}
+
+
+
+/*Keyframes Menu Burger*/
+
+/*Burger in*/
+@keyframes p1 {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(46deg);
+    top: 7px;
+    right: 0px;
+  }
+}
+@keyframes p2 {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes p3 {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-46deg) translateX(2px);
+    top: 32px;
+    right: 0px;
+  }
+}
+
+/*Burger Out Out*/
+@keyframes p1Out {
+  0% {
+    transform: rotate(46deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes p2Out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes p3Out {
+  0% {
+    transform: rotate(-46deg);
+  }
+  100% {
+    transform: rotate(-0deg);
+  }
+}
+
+/*Nav*/
+
+/*Home in-out*/
+@include framesInItemsNav(inHome);
+@include framesOutItemsNav(outHome);
+
+
+/*Portfolio in-out*/
+@include framesInItemsNav(inPort);
+@include framesOutItemsNav(outPort);
+
+/*About in-out*/
+@include framesInItemsNav(inAbout);
+@include framesOutItemsNav(outAbout);
+
+
+/*Contact in-out*/
+@include framesInItemsNav(inContact);
+@include framesOutItemsNav(outContact);

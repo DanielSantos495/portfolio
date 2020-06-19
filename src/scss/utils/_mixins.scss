@@ -1,0 +1,82 @@
+/*Mixins------------------Mixins*/
+
+/*Nav*/
+@mixin framesInItemsNav($id) {
+  @keyframes #{$id} {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      background-color: var(--Color-Primary);
+    }
+  }
+}
+@mixin framesOutItemsNav($id) {
+  @keyframes #{$id} {
+    0% {
+      opacity: 1;
+      background-color: var(--Color-Primary);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+
+/*Placeholder--------------------Placeholder*/
+%heroLetterDS {
+  display: inline-block;
+  font-size: var(--Font-Size-Five);
+  opacity: 1;
+  will-change: transform, opacity;
+
+}
+
+%heroLetterWebDev {
+  display: inline-block;
+  opacity: 1;
+  will-change: transform, opacity;
+}
+
+/*Two Last-Section*/
+
+
+%title-last-section {
+  margin-bottom: var(--Margin-Titles);
+  font-size: var(--Font-Size-Five);
+  color: var(--Color-Primary);
+}
+%description-last-section {
+  position: relative;
+  left: 0;
+  margin: 0 0 20px 20%;
+  line-height: var(--Line-Height);
+  color: var(--Color-Primary);
+}
+
+/*Media Queries*/
+@mixin media($breakpoint) {
+
+  @if $breakpoint == cellphone {
+    @media screen and (min-width: 480px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == tablet-small {
+    @media screen and (min-width: 600px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == tablet {
+    @media screen and (min-width: 800px) and (max-width: 1023px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == laptop {
+    @media screen and (min-width: 1024px){
+      @content;
+    }
+  }
+}

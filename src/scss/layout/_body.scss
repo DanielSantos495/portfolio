@@ -1,0 +1,16 @@
+// .body {
+//     @include media(laptop) {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-areas: "header ."
+//                              "present avatar";
+//     }
+// }
+
+// .main {
+//     @include media(laptop) {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-areas: "present avatar";
+//     }
+// }
