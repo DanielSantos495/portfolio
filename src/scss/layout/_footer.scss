@@ -17,7 +17,7 @@
   width: 52%;
   height: 150px;
   position: absolute;
-  top: 2700px;
+  top: 2800px;
   right: 0;
   background-color: var(--Color-Primary);
   z-index: 0;
@@ -25,13 +25,13 @@
     width: 51%;
   }
   @include media(tablet-small) {
-    top: 2900px;
+    top: 3000px;
   }
   @include media(tablet) {
     width: 51%;
-    top: 3100px;
+    top: 3200px;
   }
   @include media(laptop) {
-    top: 3000px;
+    top: 3050px;
   }
 }
